@@ -21,6 +21,7 @@ jobs:
         run: |
           echo "Do the magic"
           cd "$GITHUB_WORKSPACE"
+          cp ./res ./build
           echo "$PWD"
           
       - name: Deploy
@@ -31,4 +32,4 @@ jobs:
           git remote add origin gh-pages
           git add ./build/*
           git commit -m "Deploy to gh-pages"
-          git push -u origin gh-pages
+          git push origin/gh-pages
