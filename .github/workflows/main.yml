@@ -21,7 +21,7 @@ jobs:
         run: |
           echo "Do the magic"
           cd "$GITHUB_WORKSPACE"
-          cp ./res ./build
+          cp -r ./res ./build
           echo "$PWD"
           
       - name: Deploy
