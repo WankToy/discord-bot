@@ -1,0 +1,15 @@
+# Build and Release Folders
+how-to/
+bin-debug/
+bin-release/
+[Oo]bj/
+[Bb]in/
+
+.settings/
+.eslint.json
+
+# Executables
+*.swf
+*.air
+*.ipa
+*.apk
