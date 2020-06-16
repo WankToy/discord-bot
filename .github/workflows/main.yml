@@ -23,6 +23,7 @@ jobs:
           
       - name: Commit files
         run: |
+          cd "$GITHUB_WORKSPACE"/discord-bot
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add res/*
