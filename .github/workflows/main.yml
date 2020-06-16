@@ -15,17 +15,20 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@master
 
-      - name: Create local changes
+      - name: Build
         run: |
           echo "Do the magic"
-          
-      - name: Commit files
-        run: |
           cd "$GITHUB_WORKSPACE"
+          echo "$PWD"
+          
+      - name: Deploy
+        run: |
+          echo "Deploy ./build to origin gh-pages"
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add res/*
-          git commit -am "Add changes"
+          git remote add origin gh-pages
+          git add ./build/*
+          git commit -m "Deploy to gh-pages"
           git push -u origin gh-pages
